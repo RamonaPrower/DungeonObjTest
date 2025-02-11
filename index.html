@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  <link rel="stylesheet" href="./index.css" />
+  <title>Dungeon Generation Testing</title>
+</head>
+
+<body>
+  <div class="container">
+    <div class="my-3 align-items-center">
+      <button id="regenerate" class="btn btn-primary">Regenerate</button>
+      <button class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasLog"
+        aria-controls="offcanvasLog">
+        Log
+      </button>
+      <button class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasAdv"
+        aria-controls="offcanvasAdv">
+        Options
+      </button>
+    </div>
+  </div>
+  <div class="container-fluid">
+    <div id="dungeonContainer"></div>
+  </div>
+  <!-- Add tooltip element -->
+  <div id="dungeonTooltip"></div>
+  <div class="offcanvas offcanvas-end show" tabindex="-1" id="offcanvasLog" data-bs-backdrop="false"
+    aria-labelledby="offcanvasLogLabel">
+    <div class="offcanvas-header">
+      <h5 class="offcanvas-title" id="offcanvasLogLabel">Log</h5>
+      <button type="button" class="btn btn-outline-dark" id="logClear">
+        Clear
+      </button>
+      <div class="form-check form-switch">
+        <input class="form-check-input" type="checkbox" role="switch" id="autoClearSwitch" />
+        <label class="form-check-label" for="autoClearSwitch">Auto-Clear?</label>
+      </div>
+      <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    </div>
+    <div class="offcanvas-body" id="logContainer"></div>
+  </div>
+  <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasAdv" data-bs-backdrop="false"
+    aria-labelledby="offcanvasAdvLabel">
+    <div class="offcanvas-header">
+      <h5 class="offcanvas-title" id="offcanvasAdvLabel">Options</h5>
+      <button type="button" class="btn btn-outline-dark" id="defaultOptions">
+        Default
+      </button>
+      <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    </div>
+    <div class="offcanvas-body" id="optionsContainer">
+      <div class="mb-3">
+        <label for="row" class="form-label">Dungeon Size</label>
+        <input type="number" name="row" id="dungeonRow" value="32" /> X
+        <input type="number" name="col" id="dungeonCol" value="40" />
+      </div>
+      <div class="mb-3">
+        <label for="room" class="form-label">Dungeon Room Min/Max</label>
+        <input type="number" name="room" id="dungeonRoomMin" value="8" />
+        <input type="number" name="room" id="dungeonRoomMax" value="14" />
+      </div>
+      <div class="mb-3">
+        <label for="room" class="form-label">Min Room Size</label>
+        <input type="number" name="dungeonRoomMinX" id="dungeonRoomMinX" value="3" />
+        X
+        <input type="number" name="dungeonRoomMinY" id="dungeonRoomMinY" value="3" />
+      </div>
+      <div class="mb-3">
+        <label for="room" class="form-label">Max Room Size</label>
+        <input type="number" name="dungeonRoomMaxX" id="dungeonRoomMaxX" value="7" />
+        X
+        <input type="number" name="dungeonRoomMaxY" id="dungeonRoomMaxY" value="7" />
+      </div>
+      <div class="form-check form-switch">
+        <label class="form-check-label" for="drawRoomLinks">Draw Room Links</label>
+        <input class="form-check-input" type="checkbox" role="switch" id="drawRoomLinks" />
+      </div>
+      <div class="mb-3">
+        <label for="dungeonSeed" class="form-label">Seed (optional)</label>
+        <input type="text" class="form-control" id="dungeonSeed" placeholder="Leave empty for random seed">
+      </div>
+    </div>
+  </div>
+</body>
+<script type="module" crossorigin="anonymous" src="./index.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+</html>

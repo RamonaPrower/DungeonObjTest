@@ -1,0 +1,22 @@
+{
+  "name": "dungeongenerationtest",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "build": "parcel build",
+    "builddemo": "parcel build index.html",
+    "dev": "parcel index.html"
+  },
+  "type": "module",
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "pixi.js": "^8.7.3",
+    "prettier": "^2.5.1"
+  },
+  "devDependencies": {
+    "eslint": "latest",
+    "eslint-config-google": "latest",
+    "parcel": "latest"
+  }
+}

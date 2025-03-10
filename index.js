@@ -1,6 +1,3 @@
-// THIS IS THE GOOD VERSION
-// ALL THE OTHER VERSIONS ARE THE WORSE ONES
-
 // import the dungeon generator class as require
 import Dungeon from './dungeonGen.js';
 import * as PIXI from 'pixi.js';
